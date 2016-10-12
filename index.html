@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Towards a Drone Cinematographer: Guiding Quadrotor Cameras using Visual Composition Principles</title>
+
+    <!--- FB OPENGRAPH START -->
+
+    <meta property="og:type"  content="article" />
+    <meta property="og:title" content="Towards a Drone Cinematographer: Guiding Quadrotor Cameras using Visual Composition Principles" />
+    <meta property="og:description" content="In this paper, we demonstrate a quadrotor that automatically captures video by following the rules of cinematography." />
+    <meta property="og:image"       content="" />
+
+    <!--- FOUNDATION IMPORT START -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <!--- FOUNDATION IMPORT END -->
+
+    <link href='https://fonts.googleapis.com/css?family=Abel|Inconsolata:400,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://www.stanford.edu/su-identity/css/su-identity.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" />
+    <![endif]-->
+  </head>
+  <body>
+
+  <!-- Brandbar snippet start -->
+  <div id="brandbar">
+    <div class="container">
+      <a href="http://www.stanford.edu">
+        <img src="https://www.stanford.edu/su-identity/images/brandbar-stanford-logo@2x.png" alt="Stanford University" width="152" height="23">
+      </a>
+    </div> <!-- .container end -->
+  </div> <!-- #brandbar end -->
+  <!-- Brandbar snippet end -->
+
+  <div class="heroVideo-wrapper">
+  <div class="heroVideo-container">
+     <video autoplay loop poster="images/00_TeaserVideo_Full.Still.jpg" class="heroVideo">
+      <source src="videos/00_TeaserVideo_Full.mov" type="video/mp4">
+     </video>
+     <div class="heroVideo-section">
+      <h1 class="heroVideo-section-paperTitle">
+        Towards a Drone Cinematographer: <br/>Guiding Quadrotor Cameras using Visual Composition Principles
+      </h1>
+      <div class="heroVideo-section-attribution">
+        
+      </div>
+      <div class="heroVideo-section-authors">
+        Niels Joubert<sup>*</sup>,
+        Jane L. E<sup>*</sup>,
+        Dan B Goldman,
+        Floraine Berthouzoz,
+        Mike Roberts,
+        James A. Landay,
+        Pat Hanrahan
+      </div>    
+      <div class="heroVideo-section-subnote">
+         <sup>*</sup>Authors contributed equally
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div class="row section firstSection">
+<!--     <img src="images/WebTeaser.png">
+ -->  </div>
+
+  <div class="row section sectionGrey">
+    <div class="large-9 columns subsection">
+      <h1 class="sectionHeading">Abstract</h1>
+      We present a system to capture video footage of human subjects in the real world. Our system leverages a quadrotor camera to automatically capture well-composed video of two subjects. Subjects are tracked in a large-scale outdoor environment using RTK GPS and IMU sensors. Then, given the tracked state of our subjects, our system automatically computes static shots based on well-established visual composition principles and canonical shots from cinematography literature. To transition between these static shots, we calculate feasible, safe, and visually pleasing transitions using a novel real-time trajectory planning algorithm. We evaluate the performance of our tracking system, and experimentally show that RTK GPS significantly outperforms conventional GPS in capturing a variety of canonical shots. Lastly, we demonstrate our system guiding a consumer quadrotor camera autonomously capturing footage of two subjects in a variety of use cases. This is the first end-to-end system that enables people to leverage the mobility of quadrotors, as well as the knowledge of expert filmmakers, to autonomously capture high-quality footage of people in the real world.
+    </div>
+    <div class="large-3 columns">
+      <a href="https://arxiv.org/pdf/1610.01691v1.pdf" target="_blank"><div class="sectionButton">Technical Paper</div></a>
+      <a href="https://arxiv.org/abs/1610.01691" target="_blank"><div class="sectionButton">arXiv post</div></a>
+      <a href="https://github.com/njoubert/spooky" target="_blank"><div class="sectionButton">Source Code</div></a>
+      <a href="citation.txt" target="_blank"><div class="sectionButton">MLA Citation</div></a>
+      <a href="citation.bib" target="_blank"><div class="sectionButton">BibTeX Citation</div></a>
+    </div>
+  </div>
+
+
+  <div class="row section">
+    <div class="large-12 columns">
+      <h1 class="sectionHeading">Video</h1>
+            
+      <div class="flex-video widescreen youtube">
+        <iframe width="740" height="416" src="https://www.youtube.com/embed/tIJ_lLpFbjc?autoplay=0&autohide=1" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+      
+
+    </div>
+  </div>
+
+  <div class="row section sectionGrey">
+    <div class="large-12 columns">
+      <h1 class="sectionHeading">Authors</h1>
+
+      <ul class="authorItems">
+        <li class="authorItem">
+          <img src="images/AUTH_niels_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Niels Joubert*</div>
+          <div class="authorItem-institution">Stanford University</div>
+          <div class="authorItem-email">niels@cs.stanford.edu</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:niels@cs.stanford.edu"><span class="octicon octicon-mail"></span></a>
+            <a class="authorItem-links-icon" href="http://njoubert.com"><span class="octicon octicon-home"></span></a>
+            <a class="authorItem-links-icon" href="http://github.com/njoubert/"><span class="octicon octicon-mark-github"></span></a>
+          </div>
+        </li>
+    
+    <li class="authorItem">
+          <img src="images/AUTH_jane_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Jane L. E*</div>
+          <div class="authorItem-institution">Stanford University</div>
+          <div class="authorItem-email">ejane@stanford.edu</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:ejane@stanford.edu"><span class="octicon octicon-mail"></span></a>
+            <a class="authorItem-links-icon" href="http://www.cs.stanford.edu/people/ejane/"><span class="octicon octicon-home"></span></a>
+            <a class="authorItem-links-icon" href="https://github.com/littlejanee"><span class="octicon octicon-mark-github"></span></a>
+          </div>
+        </li>
+    
+        <li class="authorItem">
+          <img src="images/AUTH_dan_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Dan B Goldman</div>
+          <div class="authorItem-institution">Google</div>
+          <div class="authorItem-email">dgo@google.com</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:dgo@google.com"><span class="octicon octicon-mail"></span></a>
+            <a class="authorItem-links-icon" href="http://www.danbgoldman.com/"><span class="octicon octicon-home"></span></a>
+            <a class="authorItem-links-icon" href="https://github.com/danbgoldman"><span class="octicon octicon-mark-github"></span></a>
+          </div>
+        </li>
+
+        <li class="authorItem">
+          <img src="images/AUTH_floraine_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Floraine Berthouzoz</div>
+          <div class="authorItem-institution">Adobe Research</div>
+          <div class="authorItem-email">floraine@adobe.com</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="http://www.floraine.org"><span class="octicon octicon-home"></span></a>
+          </div>
+        </li>
+    
+        <li class="authorItem">
+          <img src="images/AUTH_mike_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Mike Roberts</div>
+          <div class="authorItem-institution">Stanford University</div>
+          <div class="authorItem-email">mlrobert@stanford.edu</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:mlrobert@stanford.edu"><span class="octicon octicon-mail"></span></a>            
+            <a class="authorItem-links-icon" href="http://graphics.stanford.edu/~mlrobert/"><span class="octicon octicon-home"></span></a>
+            <a class="authorItem-links-icon" href="https://github.com/mikeroberts3000/"><span class="octicon octicon-mark-github"></span></a>
+          </div>
+        </li>
+    
+    
+    
+        <li class="authorItem">
+          <img src="images/AUTH_james_raw.jpeg" height=100 width=100>
+          <div class="authorItem-name">James A. Landay</div>
+          <div class="authorItem-institution">Stanford University</div>
+          <div class="authorItem-email">landay@cs.stanford.edu</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:landay@cs.stanford.edu"><span class="octicon octicon-mail"></span></a>            
+            <a class="authorItem-links-icon" href="https://profiles.stanford.edu/james-landay"><span class="octicon octicon-home"></span></a>
+          </div>
+        </li>
+    
+    
+        <li class="authorItem">
+          <img src="images/AUTH_pat_raw.jpg" height=100 width=100>
+          <div class="authorItem-name">Pat Hanrahan</div>
+          <div class="authorItem-institution">Stanford University</div>
+          <div class="authorItem-email">hanrahan@cs.stanford.edu</div>
+          <div class="authorItem-links">
+            <a class="authorItem-links-icon" href="mailto:hanrahan@cs.stanford.edu"><span class="octicon octicon-mail"></span></a>
+            <a class="authorItem-links-icon" href="https://graphics.stanford.edu/~hanrahan/"><span class="octicon octicon-home"></span></a>
+            <a class="authorItem-links-icon" href="https://github.com/phanrahan"><span class="octicon octicon-mark-github"></span></a>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="large-12 columns">
+        <div class="author-note large-10">
+        * Authors contributed equally
+        </div>
+      </div>
+
+<!--       <div class="large-12 columns">
+        <div class="author-tribute large-10">We would like to pay our respects to our friend and co-author Floraine Berthouzoz, who passed away unexpectedly shortly after this paper was accepted, well before her time. Floraine, you were an incredible and inspiring collaborator; your contributions to this work and your impact on us as researchers is immeasurable. You will be dearly missed.</div>
+      </div> -->
+
+    </div>
+  </div>  
+
+
+
+  <div class="row section">
+    <div class="large-12 columns">
+      <h1 class="sectionHeading">Acknowledgements</h1>
+
+      This project would not have been possible without the generous assistance and support of many individuals.</br>
+
+      <ul class="acknowledgementList">
+
+        <li>Thank you to all the actors, friends, and dancers that volunteered their time to be in our videos: Patrick Tierney, Trisha McNamara, Lydia Chilton, Mackenzie Leake, Mike Roberts, Christine Phan, Antariksh Mahajan, Tracey Lin, Matthew Cong, Minjae Lee.</li>
+
+        <li>Thank you to Fergus Noble, Colin Beighley, Tim Harris and the entire Swift Navigation team for their support, assistance, and generous hardware donations.</li>
+
+        <li>Thank you to Dr. Brandon Basso, Dr. Dave Merrill, and the entire 3D Robotics team for their generous hardware donations and valuable support. </li>
+
+        <li>We thank Mira Doncheva, David Salesin, and Michael Rubin for their helpful discussions about the cinematography in this paper.</li>  
+
+        <li>We thank Matthew Cong for his valuable technical writing advise and enthusiasm for our work.</li>  
+
+        <li>This work was supported in part by a Microsoft Graduate Women's Scholarship. </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row section sectionGrey">
+    <div class="large-12 columns">
+      <h1 class="sectionHeading">Supported By</h1>
+      <ul class="supportedItems">
+        <li><a href="http://stanford.edu/"><img src="images/logo_SUSig_Stack.png"/></a></li>
+        <li><a href="http://swiftnav.com/"><img src="images/logo_swift.png"/></a></li>
+        <li><a href="http://3drobotics.com/"><img src="images/logo_3dr.png"/></a></li>
+        <li><a href="http://dronecode.org/"><img src="images/logo_dronecode.png"/></a></li>
+        <li><a href="https://www.microsoft.com/en-us/research/academic-program/womens-fellowship-program/"><img src="images/logo_msr.png"/></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row section sectionFooter">
+    <div class="large-12 columns">
+      Copyright Stanford University, 2016
+  </div>
+
+  <!--- FOUNDATION IMPORT START -->
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <!--- FOUNDATION IMPORT EMD -->
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10624841; 
+var sc_invisible=1; 
+var sc_security="bd525a22"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="create counter"
+href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/10624841/0/bd525a22/1/"
+alt="create counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+<!-- START OF GOOGLE ANALYTICS -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67844185-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- END OF GOOGLE ANALYTICS -->
+  </body>
+</html>
